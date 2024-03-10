@@ -1,6 +1,6 @@
 import { browser, element, by, logging } from 'protractor';
 
-describe('first-app-lesson-02 app', () => {
+describe('first-app-lesson-03 app', () => {
 
   beforeEach(() => browser.get(''));
 
@@ -15,6 +15,10 @@ describe('first-app-lesson-02 app', () => {
 
   it('should have a search button', async () => {
     expect(await element.all(by.css('button')).get(0).getText()).toEqual('Search');
+  });
+
+  it('should have a template housing-location component', async () => {
+    expect(await element.all(by.css('app-housing-location > p')).get(0).getText()).toEqual('housing-location works!');
   });
 
   afterEach(async () => {
